@@ -9,13 +9,11 @@ listener = sr.Recognizer()  # recoginises our voice
 engine = pyttsx3.init()
 voices = engine.getProperty('voices')
 
-
 # engine.setProperty('voice',voices[1].id) #0 th index for male voice and 1 for female voice
 
 def talk(text):
     engine.say(text)
     engine.runAndWait()
-
 
 def take_commad():
     try:
@@ -30,7 +28,6 @@ def take_commad():
     except:
         pass
     return command
-
 
 def run_jarvis():
     command = take_commad()
@@ -52,6 +49,5 @@ def run_jarvis():
         talk(pyjokes.get_joke())
     else:
         talk('Please say the command again')
-
 
 run_jarvis()
